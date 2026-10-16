@@ -1,0 +1,300 @@
+{
+  "model_identity": {
+    "name": "VERITAS AI Supervised News Classifier",
+    "version": "1.0.0",
+    "model_architecture": "TF-IDF N-gram Vectorization + Regularized Logistic Regression (L2)",
+    "baseline_architecture": "TF-IDF + Multinomial Naive Bayes",
+    "trained_at": "2026-10-16T14:15:39.607717Z",
+    "vocabulary_size": 25000,
+    "hyperparameters": {
+      "max_features": 25000,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "sublinear_tf": true,
+      "stop_words": "english",
+      "min_df": 3,
+      "max_df": 0.85,
+      "classifier_c": 1.0,
+      "classifier_penalty": "l2",
+      "classifier_solver": "lbfgs",
+      "class_weight": "balanced"
+    }
+  },
+  "dataset_provenance": {
+    "source_name": "George McIntire News Classification Benchmark Dataset",
+    "description": "Composite dataset assembled from verified news sources (Reuters, NYT, Politico, The Hill) and verified fabricated/hoax articles.",
+    "total_records": 6261,
+    "train_records": 5008,
+    "test_records": 1253,
+    "test_split_ratio": 0.2,
+    "stratified": true,
+    "random_seed": 42,
+    "class_distribution_overall": {
+      "FAKE": 3108,
+      "REAL": 3153
+    },
+    "class_distribution_train": {
+      "FAKE": 2486,
+      "REAL": 2522
+    },
+    "class_distribution_test": {
+      "FAKE": 622,
+      "REAL": 631
+    },
+    "label_definitions": {
+      "REAL": "Factual news coverage sourced from reputable journalistic and institutional outlets.",
+      "FAKE": "Fabricated, conspiratorial, or heavily distorted text sourced from known misinformation domains."
+    }
+  },
+  "evaluation_metrics": {
+    "primary_model": {
+      "accuracy": 0.9393,
+      "precision_macro": 0.9396,
+      "recall_macro": 0.9394,
+      "f1_macro": 0.9393,
+      "precision_weighted": 0.9396,
+      "recall_weighted": 0.9393,
+      "f1_weighted": 0.9393,
+      "confusion_matrix": [
+        [
+          585,
+          46
+        ],
+        [
+          30,
+          592
+        ]
+      ],
+      "labels": [
+        "REAL",
+        "FAKE"
+      ],
+      "per_class": {
+        "REAL": {
+          "precision": 0.9512195121951219,
+          "recall": 0.9270998415213946,
+          "f1_score": 0.9390048154093098,
+          "support": 631
+        },
+        "FAKE": {
+          "precision": 0.9278996865203761,
+          "recall": 0.9517684887459807,
+          "f1_score": 0.9396825396825397,
+          "support": 622
+        }
+      }
+    },
+    "baseline_model": {
+      "accuracy": 0.9194,
+      "precision_macro": 0.9195,
+      "recall_macro": 0.9195,
+      "f1_macro": 0.9194,
+      "precision_weighted": 0.9195,
+      "recall_weighted": 0.9194,
+      "f1_weighted": 0.9194,
+      "confusion_matrix": [
+        [
+          575,
+          56
+        ],
+        [
+          45,
+          577
+        ]
+      ],
+      "labels": [
+        "REAL",
+        "FAKE"
+      ],
+      "per_class": {
+        "REAL": {
+          "precision": 0.9274193548387096,
+          "recall": 0.9112519809825673,
+          "f1_score": 0.9192645883293366,
+          "support": 631
+        },
+        "FAKE": {
+          "precision": 0.9115323854660348,
+          "recall": 0.927652733118971,
+          "f1_score": 0.9195219123505977,
+          "support": 622
+        }
+      }
+    },
+    "metric_discussion": "In balanced news evaluation, Accuracy measures overall correct rate, but Precision and Recall reveal asymmetric real-world costs. A False Positive (classifying verified journalism as Fake) undermines institutional trust, while a False Negative (classifying misinformation as Real) permits viral deception. F1 Macro provides the harmonic mean across both classes."
+  },
+  "top_predictive_features": {
+    "top_fake_indicators": [
+      {
+        "feature": "said",
+        "weight": 3.8121
+      },
+      {
+        "feature": "gop",
+        "weight": 2.6412
+      },
+      {
+        "feature": "obama",
+        "weight": 2.5863
+      },
+      {
+        "feature": "republican",
+        "weight": 2.2342
+      },
+      {
+        "feature": "cruz",
+        "weight": 2.1456
+      },
+      {
+        "feature": "sanders",
+        "weight": 2.0776
+      },
+      {
+        "feature": "president",
+        "weight": 2.044
+      },
+      {
+        "feature": "republicans",
+        "weight": 2.0373
+      },
+      {
+        "feature": "debate",
+        "weight": 2.0019
+      },
+      {
+        "feature": "sen",
+        "weight": 1.9867
+      },
+      {
+        "feature": "tuesday",
+        "weight": 1.9804
+      },
+      {
+        "feature": "percent",
+        "weight": 1.9797
+      },
+      {
+        "feature": "candidates",
+        "weight": 1.9361
+      },
+      {
+        "feature": "fox news",
+        "weight": 1.796
+      },
+      {
+        "feature": "campaign",
+        "weight": 1.7896
+      },
+      {
+        "feature": "conservative",
+        "weight": 1.7488
+      },
+      {
+        "feature": "state",
+        "weight": 1.7413
+      },
+      {
+        "feature": "fox",
+        "weight": 1.7118
+      },
+      {
+        "feature": "nomination",
+        "weight": 1.6682
+      },
+      {
+        "feature": "cnn",
+        "weight": 1.6543
+      }
+    ],
+    "top_real_indicators": [
+      {
+        "feature": "2016",
+        "weight": -4.2511
+      },
+      {
+        "feature": "october",
+        "weight": -3.4557
+      },
+      {
+        "feature": "hillary",
+        "weight": -2.4297
+      },
+      {
+        "feature": "article",
+        "weight": -2.3301
+      },
+      {
+        "feature": "russia",
+        "weight": -2.3029
+      },
+      {
+        "feature": "share",
+        "weight": -2.2767
+      },
+      {
+        "feature": "november",
+        "weight": -2.2353
+      },
+      {
+        "feature": "november 2016",
+        "weight": -2.1842
+      },
+      {
+        "feature": "election",
+        "weight": -2.1596
+      },
+      {
+        "feature": "com",
+        "weight": -1.9929
+      },
+      {
+        "feature": "source",
+        "weight": -1.9775
+      },
+      {
+        "feature": "wikileaks",
+        "weight": -1.9171
+      },
+      {
+        "feature": "email",
+        "weight": -1.7624
+      },
+      {
+        "feature": "fbi",
+        "weight": -1.5386
+      },
+      {
+        "feature": "podesta",
+        "weight": -1.4835
+      },
+      {
+        "feature": "print",
+        "weight": -1.4473
+      },
+      {
+        "feature": "world",
+        "weight": -1.3783
+      },
+      {
+        "feature": "advertisement",
+        "weight": -1.3277
+      },
+      {
+        "feature": "posted",
+        "weight": -1.3221
+      },
+      {
+        "feature": "uk",
+        "weight": -1.2999
+      }
+    ]
+  },
+  "scientific_limitations": [
+    "The model identifies statistical lexical and stylistic patterns present in its training corpus.",
+    "It does not perform real-time factual cross-referencing, live web search, or semantic knowledge graph lookups.",
+    "Sophisticated or newly emerging misinformation adopting standard journalistic prose may fool n-gram distributions.",
+    "Predictions must NEVER be treated as an absolute factual verdict and require independent verification using trustworthy sources."
+  ]
+}

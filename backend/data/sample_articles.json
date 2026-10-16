@@ -1,0 +1,34 @@
+[
+  {
+    "id": "sample-1",
+    "category": "Diplomacy & International News",
+    "title": "Kerry to Go to Paris in Gesture of Sympathy Following Unity March",
+    "text": "U.S. Secretary of State John F. Kerry said Monday that he will stop in Paris later this week, amid criticism that no top American officials attended Sunday's unity march against terrorism. Kerry said he expects to arrive in Paris Thursday evening, as he heads to an environmental conference in Sofia, Bulgaria. He will hold talks Friday with French President Francois Hollande, reaffirming the United States' solidarity with France and shared commitment to global counter-terrorism efforts.",
+    "expected_label": "REAL",
+    "source_type": "Mainstream Journalistic Reporting (Benchmark Example)"
+  },
+  {
+    "id": "sample-2",
+    "category": "Political Conspiracy Commentary",
+    "title": "Unprecedented War with the FBI as Secret Cabal Collapses",
+    "text": "Daniel Greenfield, a fellow focusing on political controversies, reports that in the final stretch of the election, powerful political elites have gone to war with the FBI. The word unprecedented has been thrown around so often that it is losing its meaning. Anonymous insiders claim federal agents are preparing emergency indictments against covert syndicates that mainstream outlets refuse to report. Share this warning before it is censored from social feeds.",
+    "expected_label": "FAKE",
+    "source_type": "Sensationalist Conspiratorial Editorial (Benchmark Example)"
+  },
+  {
+    "id": "sample-3",
+    "category": "Global Trade & Economic Policy",
+    "title": "European Union Reaches Landmark Agreement on Comprehensive Artificial Intelligence Act",
+    "text": "Negotiators from the European Parliament and the Council of the European Union finalized provisional rules governing artificial intelligence systems across the 27-nation bloc following three days of intense negotiations in Brussels. The regulation establishes a tiered risk framework that bans manipulative biometric surveillance in public spaces, mandates transparency requirements for high-impact foundation models, and institutes strict compliance assessments for healthcare and infrastructure algorithms. Internal Market Commissioner Thierry Breton declared the agreement a global benchmark for balancing technological innovation with fundamental democratic rights.",
+    "expected_label": "REAL",
+    "source_type": "Institutional European Union Reporting"
+  },
+  {
+    "id": "sample-4",
+    "category": "Health & Miracle Cure Hoax",
+    "title": "Miracle Himalayan Root Melts 100% of Arterial Plaque Overnight, Doctors Terrified You Learn This",
+    "text": "Big Pharma is scrambling to silence a heroic independent naturopath who revealed an ancient Himalayan root extract that melts 100% of cardiovascular plaque within eight hours of ingestion. Clinical trials conducted in secret European clinics proved that heart attacks and strokes are completely cured without surgery or prescription medications. Corrupt pharmaceutical executives are bribing government regulators to ban the plant so they can protect their billions in statin profits. Order before this page is banned by the medical mafia!",
+    "expected_label": "FAKE",
+    "source_type": "Clickbait Pseudo-Scientific Medical Hoax"
+  }
+]
